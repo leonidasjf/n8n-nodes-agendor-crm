@@ -346,7 +346,7 @@ pnpm format     # Format do código
 
 Este node segue a [documentação oficial da API do Agendor](https://api.agendor.com.br/docs/).
 
-> ⚠️ **Disclaimer**: Este projeto não é afiliado, endossado ou mantido pela empresa Agendor. É um projeto da comunidade que utiliza a API pública do Agendor.
+> ⚠️ **Disclaimer**: Este projeto não é afiliado, endossado ou mantido pela empresa Agendor. É um projeto independente que utiliza a API pública do Agendor.
 
 ### 📖 Recursos Úteis
 - [Documentação Agendor API](https://api.agendor.com.br/docs/)
@@ -419,9 +419,9 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 ## ⚖️ Termos e Responsabilidade
 
 - **Não-oficial**: Este node não é desenvolvido, mantido ou endossado pela empresa Agendor
-- **Comunidade**: Projeto independente da comunidade n8n
+- **Independente**: Projeto independente não afiliado ao Agendor
 - **API Pública**: Utiliza exclusivamente a API pública documentada do Agendor
 - **Responsabilidade**: O uso é por conta e risco do usuário
-- **Suporte**: Suporte fornecido pela comunidade, não pela Agendor
+- **Suporte**: Suporte fornecido pelo desenvolvedor, não pela Agendor
 
 **Desenvolvido por [Leônidas Caldeira](https://github.com/leonidasjf)**
