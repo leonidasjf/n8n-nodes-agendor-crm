@@ -1,6 +1,6 @@
 {
   "name": "n8n-nodes-agendor-crm",
-  "version": "1.0.3",
+  "version": "1.0.5",
   "description": "Node oficial do n8n para integração completa com Agendor CRM",
   "keywords": [
     "n8n-community-node-package",
@@ -40,7 +40,8 @@
       "dist/credentials/AgendorApi.credentials.js"
     ],
     "nodes": [
-      "dist/nodes/Agendor/Agendor.node.js"
+      "dist/nodes/Agendor/Agendor.node.js",
+      "dist/nodes/Agendor/AgendorTrigger.node.js"
     ]
   },
   "devDependencies": {
