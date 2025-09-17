@@ -18,7 +18,7 @@
 
 **Node não-oficial do n8n para integração completa com o Agendor CRM**
 
-> ⚠️ **IMPORTANTE**: Este **NÃO é um node oficial** da empresa Agendor. É um projeto independente que utiliza a API pública do Agendor para integração com n8n.
+> ⚠️ **IMPORTANTE**: Este **NÃO é um node oficial** da empresa Agendor. 
 
 [![npm version](https://badge.fury.io/js/n8n-nodes-agendor-crm.svg)](https://badge.fury.io/js/n8n-nodes-agendor-crm)
 [![npm downloads](https://img.shields.io/npm/dm/n8n-nodes-agendor-crm.svg)](https://www.npmjs.com/package/n8n-nodes-agendor-crm)
