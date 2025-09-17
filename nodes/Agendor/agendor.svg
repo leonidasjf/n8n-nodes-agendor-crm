@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Background circle with Agendor's blue color -->
+  <circle cx="30" cy="30" r="30" fill="#0066CC"/>
+
+  <!-- Letter "A" stylized -->
+  <path d="M20 45 L30 15 L40 45 M24 36 L36 36" stroke="white" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- Small accent dot -->
+  <circle cx="42" cy="18" r="2" fill="white"/>
+</svg>
