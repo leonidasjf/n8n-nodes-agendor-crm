@@ -6,6 +6,13 @@
   <!-- White background circle -->
   <circle cx="30" cy="30" r="22" fill="white"/>
 
-  <!-- Agendor logo text "A" in blue -->
-  <text x="30" y="42" text-anchor="middle" fill="#0066CC" font-family="Arial, sans-serif" font-size="28" font-weight="bold">A</text>
+  <!-- Agendor logo - stylized "a" -->
+  <g transform="translate(30, 30)">
+    <!-- Main body of the "a" -->
+    <path d="M-8,-12 C-8,-12 -8,-6 -8,-2 C-8,2 -4,6 0,6 C4,6 8,2 8,-2 C8,-6 8,-12 8,-12 M0,-8 C-2,-8 -4,-6 -4,-4 C-4,-2 -2,0 0,0 C2,0 4,-2 4,-4 C4,-6 2,-8 0,-8 Z" fill="#0066CC" stroke="none"/>
+    <!-- Inner circle of "a" -->
+    <circle cx="0" cy="-4" r="2.5" fill="white"/>
+    <!-- Vertical line -->
+    <rect x="6" y="-12" width="2" height="18" fill="#0066CC"/>
+  </g>
 </svg>
