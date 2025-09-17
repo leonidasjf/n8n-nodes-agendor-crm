@@ -33,6 +33,7 @@
 
 ### 📋 Recursos Suportados
 
+#### 🔄 **Node Regular (Agendor)**
 - **📊 Organizações** - CRUD completo, busca e filtros
 - **👥 Pessoas** - CRUD completo, busca e filtros
 - **💼 Negócios** - CRUD completo, mudança de estágio, busca
@@ -43,6 +44,12 @@
 - **📈 Estágios** - Listagem de estágios de negócios
 - **🔧 Campos Personalizados** - Consulta de campos customizados
 - **📊 Relatórios** - Analytics de vendas, pipeline e performance
+
+#### ⚡ **Trigger Node (Agendor Trigger)**
+- **🎯 Webhooks em Tempo Real** - 13 eventos diferentes
+- **🔄 Gerenciamento Automático** - Criação/remoção automática de webhooks
+- **📡 Eventos Completos** - Recebe payload completo dos eventos
+- **🔧 Zero Configuração** - Setup automático no Agendor
 
 ### 🔧 Operações Disponíveis
 
@@ -100,6 +107,29 @@
 - ✅ Análise de vendas
 - ✅ Relatório de pipeline
 - ✅ Relatório de performance
+
+### ⚡ Webhooks Disponíveis (Agendor Trigger)
+
+#### 📝 Eventos de Atividades
+- **🎯 Activity Created** (`on_activity_created`) - Atividade/tarefa/comentário criado
+
+#### 🏢 Eventos de Organizações
+- **🎯 Organization Created** (`on_organization_created`) - Empresa criada
+- **🎯 Organization Updated** (`on_organization_updated`) - Empresa atualizada
+- **🎯 Organization Deleted** (`on_organization_deleted`) - Empresa deletada
+
+#### 💼 Eventos de Negócios
+- **🎯 Deal Created** (`on_deal_created`) - Negócio criado
+- **🎯 Deal Updated** (`on_deal_updated`) - Negócio atualizado
+- **🎯 Deal Deleted** (`on_deal_deleted`) - Negócio deletado
+- **🎯 Deal Stage Updated** (`on_deal_stage_updated`) - Estágio alterado
+- **🎯 Deal Won** (`on_deal_won`) - Negócio ganho
+- **🎯 Deal Lost** (`on_deal_lost`) - Negócio perdido
+
+#### 👥 Eventos de Pessoas
+- **🎯 Person Created** (`on_person_created`) - Pessoa criada
+- **🎯 Person Updated** (`on_person_updated`) - Pessoa atualizada
+- **🎯 Person Deleted** (`on_person_deleted`) - Pessoa deletada
 
 ## 🚀 Instalação
 
@@ -167,6 +197,34 @@ npm install n8n-nodes-agendor-crm
    - **ID**: `{{$json.id}}`
    - **Additional Fields**: Campos a atualizar
 
+## ⚡ Como Usar Webhooks (Triggers)
+
+### Exemplo: Notificação Quando Negócio é Ganho
+
+1. **Adicione o node Agendor Trigger**:
+   - **Event**: Deal Won
+   - **Credential**: Sua credencial Agendor
+
+2. **Adicione node de notificação** (Slack, Email, Discord):
+   - **Message**: `Parabéns! Negócio "{{$json.title}}" foi ganho! Valor: R$ {{$json.value}}`
+
+3. **Ative o workflow** - O webhook será criado automaticamente no Agendor
+
+### Exemplo: Sincronização Automática
+
+1. **Agendor Trigger** - Evento: Organization Created
+2. **HTTP Request** - Enviar dados para seu sistema
+3. **Agendor** - Criar tarefa de follow-up automática
+
+### Exemplo: Pipeline de Automação
+
+```
+Agendor Trigger (Deal Stage Updated) →
+  IF (Stage = "Proposta") →
+    Agendor (Create Task: "Enviar contrato") →
+    Email (Notificar equipe)
+```
+
 ## 🔍 Filtros e Parâmetros
 
 ### Filtros Comuns
@@ -206,29 +264,58 @@ npm install n8n-nodes-agendor-crm
 
 ## 🎯 Casos de Uso
 
-### 1. Sincronização de Leads
+### 🔄 **Com Node Regular**
+
+#### 1. Sincronização de Leads
 ```
 Webhook → Agendor (Create Organization) → Agendor (Create Person) → Agendor (Create Deal)
 ```
 
-### 2. Follow-up Automático
+#### 2. Follow-up Automático
 ```
 Schedule → Agendor (Get Deals) → Filter (sem atividade) → Agendor (Create Task)
 ```
 
-### 3. Relatório Diário
+#### 3. Relatório Diário
 ```
 Schedule → Agendor (Sales Analytics) → Email/Slack (Send Report)
 ```
 
-### 4. Integração E-commerce
-```
-E-commerce Webhook → Agendor (Create Deal) → Agendor (Move Stage) → Notification
-```
-
-### 5. Backup de Dados
+#### 4. Backup de Dados
 ```
 Schedule → Agendor (Get All Data) → Google Sheets/Database (Store)
+```
+
+### ⚡ **Com Webhooks (Trigger Node)**
+
+#### 5. Notificações em Tempo Real
+```
+Agendor Trigger (Deal Won) → Slack/Discord (Celebrar vitória) → Agendor (Create Task: Pós-venda)
+```
+
+#### 6. Automação de Pipeline
+```
+Agendor Trigger (Deal Stage Updated) → IF (Stage = Proposta) → Email (Enviar contrato)
+```
+
+#### 7. Integração E-commerce Reativa
+```
+Agendor Trigger (Deal Won) → HTTP (Criar cliente no ERP) → Email (Boas-vindas)
+```
+
+#### 8. Sincronização Bidirecional
+```
+Agendor Trigger (Organization Created) → CRM Externo (Sync) → Webhook Response
+```
+
+#### 9. Follow-up Inteligente
+```
+Agendor Trigger (Deal Lost) → Wait (7 days) → Agendor (Create Task: Re-engagement)
+```
+
+#### 10. Analytics Avançado
+```
+Agendor Trigger (Any Event) → Database (Log) → BI Tool (Real-time Dashboard)
 ```
 
 ## 🔧 Desenvolvimento
@@ -257,10 +344,40 @@ pnpm format     # Format do código
 
 Este node segue a [documentação oficial da API do Agendor](https://api.agendor.com.br/docs/).
 
-### Recursos Úteis
+### 📖 Recursos Úteis
 - [Documentação Agendor API](https://api.agendor.com.br/docs/)
+- [Agendor Webhooks Guide](https://ajuda.agendor.com.br/pt-BR/articles/6281963-a-api-do-agendor-possui-webhooks-gatilhos)
 - [n8n Community Nodes](https://docs.n8n.io/integrations/community-nodes/)
 - [n8n Development Guide](https://docs.n8n.io/integrations/creating-nodes/)
+
+### ⚡ Webhooks - Como Funcionam
+
+#### Configuração Automática
+1. **Ativação**: Quando você ativa um workflow com Agendor Trigger, o webhook é automaticamente registrado no Agendor
+2. **URL Dinâmica**: O n8n gera uma URL única para receber os eventos: `https://seu-n8n.com/webhook/agendor-xyz`
+3. **Autenticação**: Usa as mesmas credenciais do node regular
+4. **Cleanup**: Quando desativa o workflow, o webhook é automaticamente removido
+
+#### Payload dos Eventos
+Cada evento webhook contém:
+```json
+{
+  "event": "on_deal_won",
+  "data": {
+    "id": 12345,
+    "title": "Venda Importante",
+    "value": 50000,
+    "organization": {...},
+    "person": {...}
+  },
+  "headers": {...}
+}
+```
+
+#### Endpoints Utilizados
+- **GET** `/integrations/subscriptions` - Listar webhooks existentes
+- **POST** `/integrations/subscriptions` - Criar novo webhook
+- **DELETE** `/integrations/subscriptions/{id}` - Remover webhook
 
 ## 🤝 Contribuição
 
