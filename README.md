@@ -16,7 +16,9 @@
 
 # 🚀 n8n-nodes-agendor-crm
 
-**Node oficial do n8n para integração completa com o Agendor CRM**
+**Node não-oficial do n8n para integração completa com o Agendor CRM**
+
+> ⚠️ **IMPORTANTE**: Este **NÃO é um node oficial** da empresa Agendor. É um projeto independente que utiliza a API pública do Agendor para integração com n8n.
 
 [![npm version](https://badge.fury.io/js/n8n-nodes-agendor-crm.svg)](https://badge.fury.io/js/n8n-nodes-agendor-crm)
 [![npm downloads](https://img.shields.io/npm/dm/n8n-nodes-agendor-crm.svg)](https://www.npmjs.com/package/n8n-nodes-agendor-crm)
@@ -344,6 +346,8 @@ pnpm format     # Format do código
 
 Este node segue a [documentação oficial da API do Agendor](https://api.agendor.com.br/docs/).
 
+> ⚠️ **Disclaimer**: Este projeto não é afiliado, endossado ou mantido pela empresa Agendor. É um projeto da comunidade que utiliza a API pública do Agendor.
+
 ### 📖 Recursos Úteis
 - [Documentação Agendor API](https://api.agendor.com.br/docs/)
 - [Agendor Webhooks Guide](https://ajuda.agendor.com.br/pt-BR/articles/6281963-a-api-do-agendor-possui-webhooks-gatilhos)
@@ -411,5 +415,13 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 - leads
 
 ---
+
+## ⚖️ Termos e Responsabilidade
+
+- **Não-oficial**: Este node não é desenvolvido, mantido ou endossado pela empresa Agendor
+- **Comunidade**: Projeto independente da comunidade n8n
+- **API Pública**: Utiliza exclusivamente a API pública documentada do Agendor
+- **Responsabilidade**: O uso é por conta e risco do usuário
+- **Suporte**: Suporte fornecido pela comunidade, não pela Agendor
 
 **Desenvolvido por [Leônidas Caldeira](https://github.com/leonidasjf)**
