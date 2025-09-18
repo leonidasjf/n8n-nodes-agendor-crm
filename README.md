@@ -393,14 +393,6 @@ Contribuições são bem-vindas! Por favor:
 4. Push para a branch (`git push origin feature/amazing-feature`)
 5. Abra um Pull Request
 
-## 📝 Licença
-
-Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICENSE) para detalhes.
-
-## 🆘 Suporte
-
-- 🐛 **Issues**: [GitHub Issues](https://github.com/leonidasjf/n8n-nodes-agendor-crm/issues)
-- 📖 **Documentação**: [Wiki](https://github.com/leonidasjf/n8n-nodes-agendor-crm/wiki)
 
 ## 🏷️ Keywords
 
@@ -420,8 +412,5 @@ Este projeto está licenciado sob a Licença MIT - veja o arquivo [LICENSE](LICE
 
 - **Não-oficial**: Este node não é desenvolvido, mantido ou endossado pela empresa Agendor
 - **Independente**: Projeto independente não afiliado ao Agendor
-- **API Pública**: Utiliza exclusivamente a API pública documentada do Agendor
 - **Responsabilidade**: O uso é por conta e risco do usuário
-- **Suporte**: Suporte fornecido pelo desenvolvedor, não pela Agendor
-
 **Desenvolvido por [Leônidas Caldeira](https://github.com/leonidasjf)**
